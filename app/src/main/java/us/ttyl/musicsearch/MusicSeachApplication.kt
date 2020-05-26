@@ -19,6 +19,7 @@ class MusicSearchApplication: Application() {
         setupToothpickConfiguration()
         Toothpick.inject(this, setupDIGraph())
     }
+
     private fun setupToothpickConfiguration() {
         val configuration = Configuration.forDevelopment()
         configuration.disableReflection().preventMultipleRootScopes()
