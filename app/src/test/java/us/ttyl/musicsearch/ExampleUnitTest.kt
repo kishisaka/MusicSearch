@@ -1,4 +1,4 @@
-package com.venmo.musicsearch
+package us.ttyl.musicsearch
 
 import org.junit.Test
 

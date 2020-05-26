@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/musicList">
+
+    <fragment
+        android:id="@+id/musicList"
+        android:name="us.ttyl.musicsearch.ui.main.MusicListFragment">
+        tools:layout="@layout/music_list"
+        <action
+            android:id="@+id/musicList_to_detailFragment"
+            app:destination="@+id/detailFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="us.ttyl.musicsearch.ui.main.DetailFragment">
+        tools:layout="@layout/music_details"
+        <argument
+            android:name="collectionName"
+            android:defaultValue="@null"
+            app:nullable="true"
+            app:argType="string"/>
+        <argument
+            android:name="artistName"
+            android:defaultValue="@null"
+            app:nullable="true"
+            app:argType="string"/>
+        <argument
+            android:name="trackName"
+            android:defaultValue="@null"
+            app:nullable="true"
+            app:argType="string"/>
+        <argument
+            android:name="musicArtwork"
+            android:defaultValue="none"
+            app:argType="string"/>
+    </fragment>
+</navigation>
