@@ -55,6 +55,7 @@ class MusicListFragment : Fragment() {
             val searchButton: ImageButton = view.findViewById(R.id.searchButton)
             val search: TextView = view.findViewById(R.id.search)
             searchButton.setOnClickListener {
+                // should also hide soft keyboard after user hits search button
                 viewModel.searchMusicItems(search.text.toString())
             }
             val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
@@ -62,9 +63,11 @@ class MusicListFragment : Fragment() {
             recyclerView.adapter = adapter
             viewModel.musicSearchDoneState.observe(viewLifecycleOwner, musicSearchDoneObserver)
 
-            // populate default items or return to back
+            // populate default items (Eazy-E) if previous search term is empty
+            // (meaning app restart), we can store previous search in
+            // preferences later (optimization)
             if (viewModel.previousSearchTerm.isEmpty()) {
-                viewModel.searchMusicItems("Easy E")
+                viewModel.searchMusicItems("Eazy E")
             } else {
                 viewModel.searchMusicItems(viewModel.previousSearchTerm)
             }

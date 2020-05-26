@@ -39,6 +39,9 @@ class DetailFragment: Fragment() {
         return inflater.inflate(R.layout.music_detail, container, false)
     }
 
+    /**
+     * show the rest of the returned data in the next release!
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

@@ -32,6 +32,12 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    /**
+     * itunes stores a larger picture even if it does not advertise it in the return data, we
+     * simply need to change the jpeg size in the file name to get it
+     * @param url string
+     * @return updated url with large image size string
+     */
     fun transformUrlForLargePicture(url: String?): String? {
         url?.let {
             val index = url.lastIndexOf('/', url.length, false)

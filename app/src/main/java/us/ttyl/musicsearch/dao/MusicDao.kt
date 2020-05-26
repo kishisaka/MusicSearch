@@ -20,6 +20,11 @@ class MusicDao {
             .build().create(MusicSearchService::class.java)
     }
 
+    /**
+     * get the music search results here
+     * @param search term String
+     * @return list of MusicItems
+     */
     fun getMusicItems(searchTerm: String): MusicSearchResult? {
         val term = mapOf(Pair("term", searchTerm))
         val call = musicSearchService?.getMusicItems(term)
@@ -27,6 +32,11 @@ class MusicDao {
         return response?.body()
     }
 
+    /**
+     * get an individual music track item via track id
+     * @param track id String
+     * @return list of MusicItems (should only be one)
+     */
     fun getMusicTrackItem(id: String): MusicSearchResult? {
         val trackId = mapOf(Pair("id", id))
         val call = musicSearchService?.getMusicItem(trackId)
