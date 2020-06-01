@@ -47,8 +47,8 @@ class MusicListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         context?.let {
             adapter = MusicItemAdapter(it, object: OnClickCallBack {
-                override fun onClick(collectionName: String?, artistName: String?, musicName: String?, musicArtwork: String) {
-                    val direction = MusicListFragmentDirections.musicListToDetailFragment(collectionName, artistName, musicName, musicArtwork)
+                override fun onClick(collectionName: String?, artistName: String?, musicName: String?, musicArtwork: String, previewUrl: String?) {
+                    val direction = MusicListFragmentDirections.musicListToDetailFragment(collectionName, artistName, musicName, musicArtwork, previewUrl)
                     findNavController().navigate(direction)
                 }
             })
@@ -78,7 +78,8 @@ class MusicListFragment : Fragment() {
         fun onClick(collectionName: String?,
                     artistName: String?,
                     musicName: String?,
-                    musicArtwork: String)
+                    musicArtwork: String,
+                    previewUrl: String?)
     }
 
 

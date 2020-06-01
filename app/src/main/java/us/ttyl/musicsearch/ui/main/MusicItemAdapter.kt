@@ -51,7 +51,8 @@ class MusicItemAdapter(private val context: Context,
                 musicItems[position].collectionName,
                 musicItems[position].artistName,
                 musicItems[position].trackName,
-                musicItems[position].artworkUrl100
+                musicItems[position].artworkUrl100,
+                musicItems[position].previewUrl
             )
         }
     }

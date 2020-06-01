@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">MusicSearch</string>
-    <string name="search_hint">enter search term here!</string>
+    <string name="app_name">MediaShorts Search</string>
+    <string name="search_hint">Enter search term here</string>
 </resources>

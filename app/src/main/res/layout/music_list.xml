@@ -6,6 +6,7 @@
     android:id="@+id/mainFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".ui.main.MusicListFragment">
 
     <ImageButton
@@ -23,6 +24,7 @@
         android:inputType="text"
         android:lines="1"
         android:maxLines="1"
+        style="@style/GrayText"
         android:hint="@string/search_hint"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

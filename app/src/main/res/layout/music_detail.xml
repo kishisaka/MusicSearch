@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
     android:layout_height="match_parent">
     <ImageView
         android:id="@+id/artworkLarge"
@@ -28,6 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin"
+        style="@style/GrayText"
         app:layout_constraintTop_toBottomOf="@id/divider"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="artist name"/>
@@ -36,6 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin"
+        style="@style/GrayText"
         app:layout_constraintTop_toBottomOf="@id/artistName"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="collection name"/>
@@ -44,7 +47,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin"
+        style="@style/GrayText"
         app:layout_constraintTop_toBottomOf="@id/collectionName"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="track name"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin"
+        app:layout_constraintTop_toBottomOf="@id/trackName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/musicControls"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:controller_layout_id="@layout/music_controls"
+           />
+    </FrameLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
