@@ -63,11 +63,11 @@ class MusicListFragment : Fragment() {
             recyclerView.adapter = adapter
             viewModel.musicSearchDoneState.observe(viewLifecycleOwner, musicSearchDoneObserver)
 
-            // populate default items (Eazy-E) if previous search term is empty
+            // populate default items (Taylor Swift) if previous search term is empty
             // (meaning app restart), we can store previous search in
             // preferences later (optimization)
             if (viewModel.previousSearchTerm.isEmpty()) {
-                viewModel.searchMusicItems("Eazy E")
+                viewModel.searchMusicItems("Taylor Swift")
             } else {
                 viewModel.searchMusicItems(viewModel.previousSearchTerm)
             }
